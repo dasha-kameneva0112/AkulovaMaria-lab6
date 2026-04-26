@@ -55,10 +55,18 @@ def triangle_area_heron(a, b, c):
     return math.sqrt(s * (s-a) * (s-b) * (s-c))
 
 TITLE = "=== КАЛЬКУЛЯТОР ПЛОЩАДЕЙ [круг] ==="
-EXIT_MSG = "До свидания!"
 
+# КОНФЛИКТ 3: переменная EXIT_MSG
+# Ветки: feature-rectangle vs feature-triangle
+# ПРИОРИТЕТ: feature-triangle — взять эту версию
+EXIT_MSG = "Спасибо за использование! До свидания! (tri)"
+
+# КОНФЛИКТ 2: функция вывода результата
+# Ветки: feature-circle vs feature-triangle
+# СОХРАНИТЬ ОБА — объединить строки из обеих веток
 def print_result(label, value):
-    print(f"{label}: {value:.4f}")
+    if value is not None:
+        print(f">>> {label}: {value:.4f} <<<")
 
 while True:
     print(f"\n{TITLE}")

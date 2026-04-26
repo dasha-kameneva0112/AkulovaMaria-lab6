@@ -10,6 +10,9 @@ def rectangle_perimeter(a, b):
         return "Ошибка: стороны должны быть положительными"
     return 2 * (a + b)
 
+def rectangle_diagonal(a, b):
+    return math.sqrt(a**2 + b**2)
+
 def circle_area():
     print("1. Через радиус")
     print("2. Через диаметр")
@@ -34,13 +37,7 @@ def triangle_area(base, height):
         return
     return 0.5 * base * height
 
-# КОНФЛИКТ 1: переменная TITLE
-# ПРИОРИТЕТ: feature-rectangle — взять эту версию
 TITLE = "=== КАЛЬКУЛЯТОР ПЛОЩАДЕЙ [прямоугольник] ==="
-
-# КОНФЛИКТ 3: переменная EXIT_MSG
-# Ветки: feature-rectangle vs feature-triangle
-# ПРИОРИТЕТ: feature-triangle — взять версию из feature-triangle
 EXIT_MSG = "До свидания! (rect)"
 
 while True:
@@ -58,6 +55,7 @@ while True:
         b = float(input("Введите ширину: "))
         print(f"Площадь прямоугольника: S = {a} * {b} = {rectangle_area(a, b)}")
         print(f"Периметр прямоугольника: P = {rectangle_perimeter(a, b)}")
+        print(f"Диагональ прямоугольника: d = {rectangle_diagonal(a, b):.4f}")
     elif choice == "2":
         print(f"Площадь круга: {circle_area()}")
     elif choice == "3":

@@ -30,6 +30,14 @@ def circle_perimeter():
         return
     return 2 * math.pi * r
 
+def circle_sector_area():
+    r = float(input("Введите радиус: "))
+    angle = float(input("Введите угол (градусы): "))
+    if r <= 0 or angle <= 0:
+        print("Ошибка: значения должны быть положительными")
+        return
+    return 0.5 * r**2 * math.radians(angle)
+
 def triangle_area(base, height):
     if base <= 0 or height <= 0:
         print("Ошибка: основание и высота должны быть положительными")
@@ -39,9 +47,6 @@ def triangle_area(base, height):
 TITLE = "=== КАЛЬКУЛЯТОР ПЛОЩАДЕЙ [круг] ==="
 EXIT_MSG = "До свидания!"
 
-# КОНФЛИКТ 2: функция вывода результата
-# Ветки: feature-circle vs feature-triangle
-# СОХРАНИТЬ ОБА — объединить строки из обеих веток
 def print_result(label, value):
     print(f"{label}: {value:.4f}")
 

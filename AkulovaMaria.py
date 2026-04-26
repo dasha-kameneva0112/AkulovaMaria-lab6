@@ -35,9 +35,13 @@ def triangle_area(base, height):
     return 0.5 * base * height
 
 # КОНФЛИКТ 1: переменная TITLE
-# Ветки: feature-rectangle vs feature-circle
 # ПРИОРИТЕТ: feature-rectangle — взять эту версию
 TITLE = "=== КАЛЬКУЛЯТОР ПЛОЩАДЕЙ [прямоугольник] ==="
+
+# КОНФЛИКТ 3: переменная EXIT_MSG
+# Ветки: feature-rectangle vs feature-triangle
+# ПРИОРИТЕТ: feature-triangle — взять версию из feature-triangle
+EXIT_MSG = "До свидания! (rect)"
 
 while True:
     print(f"\n{TITLE}")
@@ -47,7 +51,7 @@ while True:
     print("0. Выход")
     choice = input("Выбери пункт: ")
     if choice == "0":
-        print("До свидания!")
+        print(EXIT_MSG)
         break
     elif choice == "1":
         a = float(input("Введите длину: "))

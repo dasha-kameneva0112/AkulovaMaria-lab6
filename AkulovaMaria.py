@@ -36,7 +36,11 @@ def triangle_area(base, height):
         return
     return 0.5 * base * height
 
-TITLE = "=== КАЛЬКУЛЯТОР ПЛОЩАДЕЙ ==="
+# КОНФЛИКТ 1: переменная TITLE
+# Ветки: feature-rectangle vs feature-circle
+# ПРИОРИТЕТ: feature-rectangle — при слиянии взять версию из feature-rectangle
+TITLE = "=== КАЛЬКУЛЯТОР ПЛОЩАДЕЙ [круг] ==="
+
 EXIT_MSG = "До свидания!"
 
 while True:

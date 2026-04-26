@@ -34,8 +34,13 @@ def triangle_area(base, height):
         return
     return 0.5 * base * height
 
+# КОНФЛИКТ 1: переменная TITLE
+# Ветки: feature-rectangle vs feature-circle
+# ПРИОРИТЕТ: feature-rectangle — взять эту версию
+TITLE = "=== КАЛЬКУЛЯТОР ПЛОЩАДЕЙ [прямоугольник] ==="
+
 while True:
-    print("\n=== КАЛЬКУЛЯТОР ПЛОЩАДЕЙ ===")
+    print(f"\n{TITLE}")
     print("1. Площадь прямоугольника")
     print("2. Площадь круга")
     print("3. Площадь треугольника")

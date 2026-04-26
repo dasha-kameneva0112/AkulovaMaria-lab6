@@ -64,7 +64,8 @@ while True:
     print(f"\n{TITLE}")
     print("1. Площадь прямоугольника")
     print("2. Площадь круга")
-    print("3. Площадь треугольника")
+    print("3. Площадь треугольника (осн. и высота)")
+    print("4. Площадь треугольника (по трём сторонам)")
     print("0. Выход")
     choice = input("Выбери пункт: ")
     if choice == "0":
@@ -80,6 +81,11 @@ while True:
     elif choice == "3":
         base = float(input("Введите основание: "))
         height = float(input("Введите высоту: "))
-        print(f"Площадь треугольника: {triangle_area(base, height)}")
+        print_result("Площадь треугольника", triangle_area(base, height))
+    elif choice == "4":
+        a = float(input("Сторона a: "))
+        b = float(input("Сторона b: "))
+        c = float(input("Сторона c: "))
+        print_result("Площадь треугольника (Герон)", triangle_area_heron(a, b, c))
     else:
         print("Неверный ввод!")

@@ -54,16 +54,15 @@ def triangle_area_heron(a, b, c):
     s = (a + b + c) / 2
     return math.sqrt(s * (s-a) * (s-b) * (s-c))
 
-TITLE = "=== КАЛЬКУЛЯТОР ПЛОЩАДЕЙ [круг] ==="
+def triangle_perimeter(a, b, c):
+    if a <= 0 or b <= 0 or c <= 0:
+        print("Ошибка: стороны должны быть положительными")
+        return
+    return a + b + c
 
-# КОНФЛИКТ 3: переменная EXIT_MSG
-# Ветки: feature-rectangle vs feature-triangle
-# ПРИОРИТЕТ: feature-triangle — взять эту версию
+TITLE = "=== КАЛЬКУЛЯТОР ПЛОЩАДЕЙ [круг] ==="
 EXIT_MSG = "Спасибо за использование! До свидания! (tri)"
 
-# КОНФЛИКТ 2: функция вывода результата
-# Ветки: feature-circle vs feature-triangle
-# СОХРАНИТЬ ОБА — объединить строки из обеих веток
 def print_result(label, value):
     if value is not None:
         print(f">>> {label}: {value:.4f} <<<")
@@ -95,5 +94,6 @@ while True:
         b = float(input("Сторона b: "))
         c = float(input("Сторона c: "))
         print_result("Площадь треугольника (Герон)", triangle_area_heron(a, b, c))
+        print_result("Периметр треугольника", triangle_perimeter(a, b, c))
     else:
         print("Неверный ввод!")

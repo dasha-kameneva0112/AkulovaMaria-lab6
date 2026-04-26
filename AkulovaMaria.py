@@ -23,6 +23,13 @@ def circle_area():
     result = math.pi * r * r
     return result
 
+def circle_perimeter():
+    r = float(input("Введите радиус: "))
+    if r <= 0:
+        print("Ошибка: радиус должен быть положительным")
+        return
+    return 2 * math.pi * r
+
 def triangle_area(base, height):
     if base <= 0 or height <= 0:
         print("Ошибка: основание и высота должны быть положительными")
@@ -48,6 +55,7 @@ while True:
         print(f"Площадь прямоугольника: S = {a} * {b} = {rectangle_area(a, b)}")
     elif choice == "2":
         print(f"Площадь круга: {circle_area()}")
+        print(f"Длина окружности: {circle_perimeter()}")
     elif choice == "3":
         base = float(input("Введите основание: "))
         height = float(input("Введите высоту: "))

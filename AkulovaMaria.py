@@ -44,6 +44,16 @@ def triangle_area(base, height):
         return
     return 0.5 * base * height
 
+def triangle_area_heron(a, b, c):
+    if a <= 0 or b <= 0 or c <= 0:
+        print("Ошибка: стороны должны быть положительными")
+        return
+    if a + b <= c or a + c <= b or b + c <= a:
+        print("Ошибка: такой треугольник не существует")
+        return
+    s = (a + b + c) / 2
+    return math.sqrt(s * (s-a) * (s-b) * (s-c))
+
 TITLE = "=== КАЛЬКУЛЯТОР ПЛОЩАДЕЙ [круг] ==="
 EXIT_MSG = "До свидания!"
 

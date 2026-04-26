@@ -36,12 +36,14 @@ def triangle_area(base, height):
         return
     return 0.5 * base * height
 
-# КОНФЛИКТ 1: переменная TITLE
-# Ветки: feature-rectangle vs feature-circle
-# ПРИОРИТЕТ: feature-rectangle — при слиянии взять версию из feature-rectangle
 TITLE = "=== КАЛЬКУЛЯТОР ПЛОЩАДЕЙ [круг] ==="
-
 EXIT_MSG = "До свидания!"
+
+# КОНФЛИКТ 2: функция вывода результата
+# Ветки: feature-circle vs feature-triangle
+# СОХРАНИТЬ ОБА — объединить строки из обеих веток
+def print_result(label, value):
+    print(f"{label}: {value:.4f}")
 
 while True:
     print(f"\n{TITLE}")
@@ -58,8 +60,8 @@ while True:
         b = float(input("Введите ширину: "))
         print(f"Площадь прямоугольника: S = {a} * {b} = {rectangle_area(a, b)}")
     elif choice == "2":
-        print(f"Площадь круга: {circle_area()}")
-        print(f"Длина окружности: {circle_perimeter()}")
+        print_result("Площадь круга", circle_area())
+        print_result("Длина окружности", circle_perimeter())
     elif choice == "3":
         base = float(input("Введите основание: "))
         height = float(input("Введите высоту: "))
